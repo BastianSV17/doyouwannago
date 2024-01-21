@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 class="header_text">Do you wanna go out with me?</h1>
+        </div>
+        <div class="gif_container">
+            <img src="img/img_index.gif" alt="Cute animated illustration">
+        </div>
+        <div>
+            <audio id="mySound" src="audio/sonido2.mp3" preload="auto"></audio>
+            <audio id="sound2" src="audio/sonido.mp3" preload="auto"></audio>
+        </div>
+        <div class="buttons">
+            <button class="btn" id="yesButton" onclick="playSoundAndNextPage()">Yes</button>
+            <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            <script>
+                function playSoundAndNextPage() {
+                    var sonido = document.getElementById('mySound');
+                    // Verificar si el sonido ya se está reproduciendo y reiniciar si es necesario
+                    if (sonido.paused) {
+                        sonido.currentTime = 0;
+                    }
+                    // Reproducir el sonido
+                    sonido.play();
+                    
+                    // Agregar un pequeño retraso antes de redirigir a la siguiente página
+                    setTimeout(function () {
+                        window.location.href = "yes.html";
+                    }, 100); // Ajusta el tiempo según tus necesidades
+                }
+
+                function moveButton() {
+                    var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
+                    var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
+                    document.getElementById('noButton').style.left = `${x}px`;
+                    document.getElementById('noButton').style.top = `${y}px`;
+                }
+            </script>
+        </div>
+    </div>
+</body>
+</html>
