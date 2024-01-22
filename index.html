@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./styles.css">
+    <title>iLoveYou!</title>
+    <link rel="shortcut icon" href="img/img_tab.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
 <body>
     <div class="container">
         <div>
-            <h1 class="header_text">Do you wanna go out with me?</h1>
+            <h1 class="header_text" id="index_text">Do you wanna go out with me?</h1>
         </div>
+        <script>
+            text = document.getElementById("index_text")
+            textArray = text.textContent.split('')
+            text.textContent = ''
+
+            for(var i = 0; i < textArray.length; i++){
+                text.innerHTML += '<span>'+textArray[i]+'</span>'
+            }
+        </script>
         <div class="gif_container">
             <img src="img/img_index.gif" alt="Cute animated illustration">
         </div>
@@ -25,13 +37,11 @@
                     if (sonido.paused) {
                         sonido.currentTime = 0;
                     }
-                    // Reproducir el sonido
                     sonido.play();
                     
-                    // Agregar un pequeño retraso antes de redirigir a la siguiente página
                     setTimeout(function () {
-                        window.location.href = "yes.html";
-                    }, 100); // Ajusta el tiempo según tus necesidades
+                        window.location.href = "html/yes.html";
+                    }, 95);
                 }
 
                 function moveButton() {

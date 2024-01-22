@@ -1,1 +1,1 @@
-A website to invite your lover for a date 🥰
+With this page she will never again say NO to a date together 🥰
