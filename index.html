@@ -2,9 +2,12 @@
 <html lang="en">
 <head>
     <title>iLoveYou!</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="img/img_tab.png" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/styles.css">
+    <script src="/scripts/scripts.js"></script>
 </head>
 <body>
     <div class="container">
@@ -30,27 +33,6 @@
         <div class="buttons">
             <button class="btn" id="yesButton" onclick="playSoundAndNextPage()">Yes</button>
             <button class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
-            <script>
-                function playSoundAndNextPage() {
-                    var sonido = document.getElementById('mySound');
-                    // Verificar si el sonido ya se está reproduciendo y reiniciar si es necesario
-                    if (sonido.paused) {
-                        sonido.currentTime = 0;
-                    }
-                    sonido.play();
-                    
-                    setTimeout(function () {
-                        window.location.href = "html/yes.html";
-                    }, 95);
-                }
-
-                function moveButton() {
-                    var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
-                    var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
-                    document.getElementById('noButton').style.left = `${x}px`;
-                    document.getElementById('noButton').style.top = `${y}px`;
-                }
-            </script>
         </div>
     </div>
 </body>
