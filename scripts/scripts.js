@@ -12,10 +12,27 @@ function playSoundAndNextPage() {
 }
 
 function moveButton() {
-    var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
-    var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
-    document.getElementById('noButton').style.left = `${x}px`;
-    document.getElementById('noButton').style.top = `${y}px`;
+    var button = document.getElementById('noButton');
+    
+    // Dimensiones del botón
+    var buttonWidth = button.offsetWidth;
+    var buttonHeight = button.offsetHeight;
+
+    // Dimensiones de la ventana
+    var windowWidth = window.innerWidth;
+    var windowHeight = window.innerHeight;
+
+    // Límites máximos donde el botón puede moverse
+    var maxX = windowWidth - buttonWidth;
+    var maxY = windowHeight - buttonHeight;
+
+    // Generar nuevas coordenadas 'x' y 'y' aleatorias dentro de los límites
+    var newX = Math.random() * maxX;
+    var newY = Math.random() * maxY;
+
+    // Actualizar la posición del botón
+    button.style.left = newX + 'px';
+    button.style.top = newY + 'px';
 }
 
 function backButton() {
