@@ -45,16 +45,22 @@ function backButton() {
 
 function playNoButtonSound(){
     var sonido = new Audio('audio/sonido.mp3');
-    if (sonido.paused) {
-        sonido.currentTime = 0;
-    }
-    sonido.play();
+    checkAudio(sonido)
 }
 
 function playYesButtonSound(){
     var sonido = new Audio('audio/sonido2.mp3');
-    if (sonido.paused) {
-        sonido.currentTime = 0;
+    checkAudio(sonido)
+}
+
+function playNextPageSound(){
+    var sonido = new Audio('audio/sonido3.mp3');
+    checkAudio(sonido)
+}
+
+function checkAudio(audio) {
+    if (audio.paused) {
+        audio.currentTime = 0;
+        audio.play();
     }
-    sonido.play();
 }
